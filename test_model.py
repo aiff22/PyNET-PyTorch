@@ -3,6 +3,7 @@
 from scipy import misc
 import numpy as np
 import sys
+import os
 
 from torch.utils.data import DataLoader
 from torchvision import transforms
@@ -24,6 +25,7 @@ def test_model():
         torch.backends.cudnn.deterministic = True
         device = torch.device("cuda")
     else:
+        os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
         device = torch.device("cpu")
 
     # Creating dataset loaders
@@ -43,7 +45,9 @@ def test_model():
         model.load_state_dict(torch.load("models/pynet_level_" + str(level) +
                                              "_epoch_" + str(restore_epoch) + ".pth"), strict=True)
 
-    model.half()
+    if use_gpu == "true":
+        model.half()
+
     model.eval()
 
     # Processing full-resolution RAW images
@@ -56,9 +60,12 @@ def test_model():
             print("Processing image " + str(j))
 
             torch.cuda.empty_cache()
-
             raw_image = next(visual_iter)
-            raw_image = raw_image.to(device, dtype=torch.half)
+
+            if use_gpu == "true":
+                raw_image = raw_image.to(device, dtype=torch.half)
+            else:
+                raw_image = raw_image.to(device)
 
             # Run inference
 
@@ -67,7 +74,10 @@ def test_model():
 
             # Save the results as .png images
 
-            misc.imsave("results/full-resolution/" + str(j) + "_level_" + str(level) +
+            if orig_model == "true":
+                misc.imsave("results/full-resolution/" + str(j) + "_level_" + str(level) + "_orig.png", enhanced)
+            else:
+                misc.imsave("results/full-resolution/" + str(j) + "_level_" + str(level) +
                         "_epoch_" + str(restore_epoch) + ".png", enhanced)
 
 
