@@ -39,7 +39,7 @@ This repository provides PyTorch implementation of the RAW-to-RGB mapping approa
 
 <br/>
 
-PyNET architecture has an inverted pyramidal shape and is processing the images at **five different scales** (levels). The model is trained sequentially, starting from the lowest 5th layer, which allows to achieve good reconstruction results at smaller image resolutions. After the bottom layer is pre-trained, the same procedure is applied to the next level till the training is done on the original resolution. Since each higher level is getting **upscaled high-quality features** from the lower part of the model, it mainly learns to reconstruct the missing low-level details and refines the results. In this work, we are additionally using one upsampling convolutional layer (Level 0) on top of the model that upsamples the image to its target size.
+PyNET architecture has an inverted pyramidal shape and is processing the images at **five different scales** (levels). The model is trained sequentially, starting from the lowest 5th layer, which allows to achieve good reconstruction results at smaller image resolutions. After the bottom layer is pre-trained, the same procedure is applied to the next level till the training is done on the original resolution. Since each higher level is getting **upscaled high-quality features** from the lower part of the model, it mainly learns to reconstruct the missing low-level details and refines the results. In this work, we are additionally using one upsampling convolutional layer (Level 0) on top of the model that upscales the image to its target size.
 
 Compared to the original [TensorFlow model](https://github.com/aiff22/PyNET), this implementation contains three major modifications:
 
