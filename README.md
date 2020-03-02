@@ -27,6 +27,8 @@ This repository provides PyTorch implementation of the RAW-to-RGB mapping approa
 - Download the pre-trained [PyNET model](https://drive.google.com/file/d/1PMP2ntbmV7fQaQeewbr_dw6-4zTR1PEM/view?usp=sharing) <sup>*(PSNR: 21.17, MS-SSIM: 0.8623)*</sup> and put it into `models/original/` folder.
 - Download [Zurich RAW to RGB mapping dataset](http://people.ee.ethz.ch/~ihnatova/pynet.html#dataset) and extract it into `raw_images/` folder.    
   <sub>This folder should contain three subfolders: `train/`, `test/` and `full_resolution/`</sub>
+  
+  <sub>*Please note that Google Drive has a quota limiting the number of downloads per day. To avoid it, you can login to your Google account and press "Add to My Drive" button instead of a direct download.* </sub>
 
 <br/>
 
