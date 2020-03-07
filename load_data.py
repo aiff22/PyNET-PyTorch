@@ -71,6 +71,7 @@ class LoadVisualData(Dataset):
         self.scale = scale
         self.level = level
         self.full_resolution = full_resolution
+        self.test_images = os.listdir(self.raw_dir)
 
         if level > 1 or full_resolution:
             self.image_height = 1440
@@ -87,7 +88,7 @@ class LoadVisualData(Dataset):
 
     def __getitem__(self, idx):
 
-        raw_image = np.asarray(imageio.imread(os.path.join(self.raw_dir, str(idx) + '.png')))
+        raw_image = np.asarray(imageio.imread(os.path.join(self.raw_dir, self.test_images[idx])))
         raw_image = extract_bayer_channels(raw_image)
 
         if self.level > 1 or self.full_resolution:
