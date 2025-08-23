@@ -2,15 +2,15 @@
 
 <br/>
 
-<img src="http://people.ee.ethz.ch/~ihnatova/assets/img/pynet/pynet_teaser.jpg"/>
+<img src="https://aiff22.github.io/assets/img/pynet/pynet_teaser.jpg"/>
 
 <br/>
 
-#### 1. Overview [[Paper]](https://arxiv.org/pdf/2002.05509.pdf) [[TensorFlow Implementation]](https://github.com/aiff22/PyNET) [[Project Webpage]](http://people.ee.ethz.ch/~ihnatova/pynet.html)
+#### 1. Overview [[Paper]](https://arxiv.org/pdf/2002.05509.pdf) [[TensorFlow Implementation]](https://github.com/aiff22/PyNET) [[Project Webpage]](https://aiff22.github.io/pynet.html)
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)&nbsp; *This is an alternative PyTorch implementation of the paper. The original codes and pre-trained models can be found [here](https://github.com/aiff22/PyNET).*
+:warning: *This is an alternative PyTorch implementation of the paper. The original codes and pre-trained models can be found [here](https://github.com/aiff22/PyNET).*
 
-This repository provides PyTorch implementation of the RAW-to-RGB mapping approach and PyNET CNN presented in [this paper](https://arxiv.org/). The model is trained to convert **RAW Bayer data** obtained directly from mobile camera sensor into photos captured with a professional Canon 5D DSLR camera, thus replacing the entire hand-crafted ISP camera pipeline. The provided pre-trained PyNET model can be used to generate full-resolution **12MP photos** from RAW (DNG) image files captured using the Sony Exmor IMX380 camera sensor. More visual results of this approach for the Huawei P20 and BlackBerry KeyOne smartphones can be found [here](http://people.ee.ethz.ch/~ihnatova/pynet.html#demo).
+This repository provides PyTorch implementation of the RAW-to-RGB mapping approach and PyNET CNN presented in [this paper](https://arxiv.org/). The model is trained to convert **RAW Bayer data** obtained directly from mobile camera sensor into photos captured with a professional Canon 5D DSLR camera, thus replacing the entire hand-crafted ISP camera pipeline. The provided pre-trained PyNET model can be used to generate full-resolution **12MP photos** from RAW (DNG) image files captured using the Sony Exmor IMX380 camera sensor. More visual results of this approach for the Huawei P20 and BlackBerry KeyOne smartphones can be found [here](https://aiff22.github.io/pynet.html#demo).
 
 <br/>
 
@@ -24,8 +24,8 @@ This repository provides PyTorch implementation of the RAW-to-RGB mapping approa
 
 #### 3. First steps
 
-- Download the pre-trained [PyNET model](https://drive.google.com/file/d/1PMP2ntbmV7fQaQeewbr_dw6-4zTR1PEM/view?usp=sharing) <sup>*(PSNR: 21.17, MS-SSIM: 0.8623)*</sup> and put it into `models/original/` folder.
-- Download [Zurich RAW to RGB mapping dataset](http://people.ee.ethz.ch/~ihnatova/pynet.html#dataset) and extract it into `raw_images/` folder.    
+- Download the pre-trained [PyNET model](https://download.ai-benchmark.com/s/A5wkJNztkpex8T4/download/pynet_level_0.pth) <sup>*(PSNR: 21.17, MS-SSIM: 0.8623)*</sup> and put it into `models/original/` folder.
+- Download [Zurich RAW to RGB mapping dataset](https://aiff22.github.io/pynet.html#dataset) and extract it into `raw_images/` folder.    
   <sub>This folder should contain three subfolders: `train/`, `test/` and `full_resolution/`</sub>
   
   <sub>*Please note that Google Drive has a quota limiting the number of downloads per day. To avoid it, you can login to your Google account and press "Add to My Drive" button instead of a direct download. Please check [this issue](https://github.com/aiff22/PyNET/issues/4) for more information.* </sub>
@@ -37,7 +37,7 @@ This repository provides PyTorch implementation of the RAW-to-RGB mapping approa
 
 <br/>
 
-<img src="http://people.ee.ethz.ch/~ihnatova/assets/img/pynet/pynet_architecture_github.png" alt="drawing" width="1000"/>
+<img src="https://aiff22.github.io/assets/img/pynet/pynet_architecture_github.png" alt="drawing" width="1000"/>
 
 <br/>
 
